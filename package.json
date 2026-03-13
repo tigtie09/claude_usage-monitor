@@ -1,0 +1,54 @@
+{
+  "name": "claude-usage-monitor",
+  "displayName": "Claude Usage Monitor",
+  "description": "Claude Pro プランの使用制限をステータスバーに表示",
+  "version": "0.2.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Claude Usage Monitor",
+      "properties": {
+        "claudeUsage.sessionKey": {
+          "type": "string",
+          "default": "",
+          "description": "claude.ai の sessionKey Cookie"
+        },
+        "claudeUsage.cfClearance": {
+          "type": "string",
+          "default": "",
+          "description": "claude.ai の cf_clearance Cookie（通常は不要）"
+        },
+        "claudeUsage.orgId": {
+          "type": "string",
+          "default": "",
+          "description": "Organization ID"
+        },
+        "claudeUsage.pythonPath": {
+          "type": "string",
+          "default": "python",
+          "description": "Python のパス（curl_cffi がインストールされた環境）"
+        },
+        "claudeUsage.refreshIntervalMinutes": {
+          "type": "number",
+          "default": 5,
+          "description": "更新間隔（分）"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "claudeUsage.refresh",
+        "title": "Claude Usage: 今すぐ更新"
+      },
+      {
+        "command": "claudeUsage.setup",
+        "title": "Claude Usage: 初期設定"
+      }
+    ]
+  }
+}

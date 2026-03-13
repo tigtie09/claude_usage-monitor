@@ -1,0 +1,22 @@
+# VS Code settings (contains secrets)
+.vscode/settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+
+# Secrets - NEVER commit these
+**/sessionKey*
+**/secrets*
+
+# Personal memo
+MEMO.md
