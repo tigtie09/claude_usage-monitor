@@ -41,7 +41,7 @@ pip install curl_cffi
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/tigtie09/claude_usage-monitor.git
+git clone https://github.com/tigtie09/claude-usage-monitor.git
 
 # VS Code の拡張ディレクトリにコピー
 cp -r claude-usage-monitor ~/.vscode/extensions/claude-usage-monitor
