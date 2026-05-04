@@ -30,7 +30,7 @@
         },
         "claudeUsage.pythonPath": {
           "type": "string",
-          "default": "python",
+          "default": "/Users/saitotaiga/opt/anaconda3/bin/python3",
           "description": "Python のパス（curl_cffi がインストールされた環境）"
         },
         "claudeUsage.refreshIntervalMinutes": {

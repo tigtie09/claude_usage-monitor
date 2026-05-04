@@ -7,12 +7,12 @@ let statusBarItem7d;
 let refreshTimer;
 
 function activate(context) {
-    statusBarItem5h = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 101);
+    statusBarItem5h = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 101);
     statusBarItem5h.command = 'claudeUsage.refresh';
     statusBarItem5h.tooltip = 'クリックで更新';
     context.subscriptions.push(statusBarItem5h);
 
-    statusBarItem7d = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+    statusBarItem7d = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
     statusBarItem7d.command = 'claudeUsage.refresh';
     statusBarItem7d.tooltip = 'クリックで更新';
     context.subscriptions.push(statusBarItem7d);
@@ -133,11 +133,11 @@ function updateStatusBar(data) {
     const fiveIcon = fivePct >= 80 ? '$(warning)' : '$(clock)';
     const weekIcon = weekPct >= 80 ? '$(warning)' : '$(calendar)';
 
-    statusBarItem5h.text = `${fiveIcon} 5h:${fivePct}%(${fiveReset})`;
+    statusBarItem5h.text = `${fiveIcon} Claude 5h:${fivePct}%(${fiveReset})`;
     statusBarItem5h.tooltip = `現在のセッション: ${fivePct}% 使用済み\nリセット: ${fiveReset}後\nクリックで更新`;
     statusBarItem5h.show();
 
-    statusBarItem7d.text = `${weekIcon} 7d:${weekPct}%(${weekReset})`;
+    statusBarItem7d.text = `${weekIcon} Claude 7d:${weekPct}%(${weekReset})`;
     statusBarItem7d.tooltip = `週間制限: ${weekPct}% 使用済み\nリセット: ${weekReset}後\nクリックで更新`;
     statusBarItem7d.show();
 }
